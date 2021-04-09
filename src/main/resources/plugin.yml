@@ -1,0 +1,10 @@
+name: StickStaffs
+version: 1.3
+main: me.bananentoast.stickstaffs.StickStaffs
+api-version: 1.16.5
+authors: [ Bananentoast ]
+description: A collection of useless Stickstaffs
+website: https://github.com/Bananentoaster
+
+commands:
+  staff:
