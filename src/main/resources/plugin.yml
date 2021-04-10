@@ -1,7 +1,7 @@
 name: StickStaffs
 version: 1.4
 main: me.bananentoast.stickstaffs.StickStaffs
-api-version: 1.16.5
+api-version: 1.16
 authors: [ Bananentoast ]
 description: A collection of useless Stickstaffs
 website: https://github.com/Bananentoaster
