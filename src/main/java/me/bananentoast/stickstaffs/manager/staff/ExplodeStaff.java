@@ -23,7 +23,7 @@ public class ExplodeStaff extends BaseStaff {
 
         player.playSound(player.getLocation(), Sound.ENTITY_ITEM_BREAK, 10, 10);
         TNTPrimed tnt = (TNTPrimed) player.getWorld().spawnEntity(player.getLocation(), EntityType.PRIMED_TNT);
-        tnt.setYield(10);
+        tnt.setYield(100);
         tnt.setFuseTicks(0);
 
     }
