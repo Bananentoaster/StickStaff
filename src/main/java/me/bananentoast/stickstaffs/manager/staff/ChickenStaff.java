@@ -15,7 +15,7 @@ public class ChickenStaff extends BaseStaff {
     @Override
     public void onClick(Player player) {
 
-        if (!consume(player, Material.EGG, 1, true)) {
+        if (!consume(player, Material.EGG, 1, false)) {
             player.sendMessage("§4Give me eggs!");
             return;
         }

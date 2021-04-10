@@ -2,7 +2,9 @@ package me.bananentoast.stickstaffs.manager.staff;
 
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.TNTPrimed;
 import org.bukkit.inventory.ItemStack;
 
 public class ExplodeStaff extends BaseStaff {
@@ -14,13 +16,16 @@ public class ExplodeStaff extends BaseStaff {
     @Override
     public void onClick(Player player) {
 
-        if (player.getItemInHand().getAmount() > 1) {
-            player.getItemInHand().setAmount(player.getItemInHand().getAmount() - 1);
-        } else {
-            player.setItemInHand(new ItemStack(Material.AIR));
+        if (!consume(player, Material.TNT, 16, false)) {
+            player.sendMessage("§4Give me TNT!");
+            return;
         }
+
         player.playSound(player.getLocation(), Sound.ENTITY_ITEM_BREAK, 10, 10);
-        player.getLocation().getWorld().createExplosion(player.getLocation(), 5);
+        TNTPrimed tnt = (TNTPrimed) player.getWorld().spawnEntity(player.getLocation(), EntityType.PRIMED_TNT);
+        tnt.setYield(10);
+        tnt.setFuseTicks(0);
+
     }
 
 }
