@@ -51,7 +51,7 @@ public class StaffCommand implements CommandExecutor, TabCompleter {
         }
 
         if (args.length == 1) {
-            list.addAll(instance.getStaffManager().getStaffNames());
+            list.addAll(instance.getStaffManager().getCasedStaffNames());
             return ListUtil.getShorterList(list, args[0]);
         }
 
