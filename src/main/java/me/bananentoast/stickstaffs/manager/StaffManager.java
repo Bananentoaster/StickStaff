@@ -16,6 +16,8 @@ public class StaffManager {
 
     private StickStaffs instance;
 
+    private final List<String> staffCasedNames = new ArrayList<>();
+
     private final HashMap<String, BaseStaff> staffNames = new HashMap<>();
     private final HashMap<String, BaseStaff> staffItemNames = new HashMap<>();
 
@@ -34,6 +36,7 @@ public class StaffManager {
     }
 
     private void addStaff(BaseStaff newStaff) {
+        staffCasedNames.add(newStaff.getName());
         staffNames.put(newStaff.getName().toLowerCase(), newStaff);
         staffItemNames.put(newStaff.getItemName().toLowerCase(), newStaff);
 
@@ -75,4 +78,7 @@ public class StaffManager {
         return new ArrayList<>(staffNames.keySet());
     }
 
+    public List<String> getCasedStaffNames() {
+        return staffCasedNames;
+    }
 }
