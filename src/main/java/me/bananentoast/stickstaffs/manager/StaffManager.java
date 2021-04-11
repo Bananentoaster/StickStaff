@@ -41,12 +41,15 @@ public class StaffManager {
         staffItemNames.put(newStaff.getItemName().toLowerCase(), newStaff);
 
         //Register Recipe
-        NamespacedKey key = new NamespacedKey(instance, "staff_" + newStaff.getName());
-        ShapedRecipe recipe = new ShapedRecipe(key, getStaffItem(newStaff));
-        recipe.shape("AAM", "ASA", "SAA");
-        recipe.setIngredient('M', newStaff.getMaterial());
-        recipe.setIngredient('S', Material.STICK);
-        instance.getServer().addRecipe(recipe);
+        if (newStaff.hasRecipe()) {
+            NamespacedKey key = new NamespacedKey(instance, "staff_" + newStaff.getName());
+            ShapedRecipe recipe = new ShapedRecipe(key, getStaffItem(newStaff));
+            recipe.shape("AAM", "ASA", "SAA");
+            recipe.setIngredient('M', newStaff.getRecipeMaterial());
+            recipe.setIngredient('S', Material.STICK);
+            instance.getServer().addRecipe(recipe);
+        }
+
     }
 
     public BaseStaff getStaff(String name) {
