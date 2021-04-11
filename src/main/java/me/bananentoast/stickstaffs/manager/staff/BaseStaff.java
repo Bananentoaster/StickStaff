@@ -7,14 +7,24 @@ import org.bukkit.inventory.PlayerInventory;
 
 public abstract class BaseStaff {
 
-    private String name;
-    private String itemName;
-    private Material material;
+    private final String name;
+    private final String itemName;
 
-    public BaseStaff(String name, String itemName, Material material) {
+    private final boolean hasRecipe;
+    private final Material recipeMaterial;
+
+    public BaseStaff(String name, String itemName) {
         this.name = name;
         this.itemName = itemName;
-        this.material = material;
+        hasRecipe = false;
+        recipeMaterial = null;
+    }
+
+    public BaseStaff(String name, String itemName, Material recipeMaterial) {
+        this.name = name;
+        this.itemName = itemName;
+        hasRecipe = true;
+        this.recipeMaterial = recipeMaterial;
     }
 
     public abstract void onClick(Player player);
@@ -27,8 +37,12 @@ public abstract class BaseStaff {
         return itemName;
     }
 
-    public Material getMaterial() {
-        return material;
+    public boolean hasRecipe() {
+        return hasRecipe;
+    }
+
+    public Material getRecipeMaterial() {
+        return recipeMaterial;
     }
 
     public boolean consume(Player player, Material material, int count, boolean consumeInCreative) {
