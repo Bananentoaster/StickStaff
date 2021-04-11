@@ -14,7 +14,7 @@ import java.util.List;
 
 public class StaffManager {
 
-    private StickStaffs instance;
+    private final StickStaffs instance;
 
     private final List<String> staffCasedNames = new ArrayList<>();
 
