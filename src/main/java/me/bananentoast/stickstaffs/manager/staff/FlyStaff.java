@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 public class FlyStaff extends BaseStaff {
 
     public FlyStaff() {
-        super("fly", "§f§lFly Staff", Material.BARRIER);
+        super("fly", "§f§lFly Staff");
     }
 
     @Override
