@@ -15,7 +15,7 @@ public class HighligtStaff extends BaseStaff {
     public void onClick(Player player) {
         Block b = player.getTargetBlockExact(30);
         if(b != null) {
-            OutlineUtil.outlineBlock(b, Particle.GLOW, 3);
+            OutlineUtil.outlineBlock(b, Particle.SOUL, 3);
         }else{
             player.sendMessage("§bWhere da block at");
         }
