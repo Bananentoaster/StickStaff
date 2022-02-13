@@ -23,7 +23,7 @@ public abstract class BaseStaff {
     public BaseStaff(String name, String itemName, Material recipeMaterial) {
         this.name = name;
         this.itemName = itemName;
-        hasRecipe = true;
+        this.hasRecipe = true;
         this.recipeMaterial = recipeMaterial;
     }
 
