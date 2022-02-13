@@ -1,6 +1,7 @@
 package me.bananentoast.stickstaffs.manager.staff;
 
 import me.bananentoast.stickstaffs.helpers.OutlineUtil;
+
 import org.bukkit.Material;
 import org.bukkit.Particle;
 import org.bukkit.block.Block;
