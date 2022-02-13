@@ -21,7 +21,6 @@ public class StaffManager {
     }
 
     public void loadStaffs() {
-
         addStaff(new HealStaff());
         addStaff(new LightningStaff());
         addStaff(new TeleportStaff());
@@ -40,7 +39,6 @@ public class StaffManager {
         //Register Recipe
         if (newStaff.getRecipe() != null) {
             instance.getServer().addRecipe(newStaff.getRecipe());
-            instance.getLogger().info("Added recipe for " + newStaff.getName());
         }
     }
 
