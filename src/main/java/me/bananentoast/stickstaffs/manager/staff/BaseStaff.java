@@ -1,6 +1,7 @@
 package me.bananentoast.stickstaffs.manager.staff;
 
 import me.bananentoast.stickstaffs.StickStaffs;
+import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
@@ -128,8 +129,11 @@ public abstract class BaseStaff {
         return hasRecipe;
     }
 
+    /**
+     * @return true if it was consumed
+     */
     public boolean consume(Player player, Material material, int count, boolean consumeInCreative) {
-        if (!consumeInCreative) {
+        if (!consumeInCreative && player.getGameMode().equals(GameMode.CREATIVE)) {
             return true;
         }
         if (!player.getInventory().contains(material, count)) {
