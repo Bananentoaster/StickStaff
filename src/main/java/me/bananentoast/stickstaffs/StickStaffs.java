@@ -1,16 +1,13 @@
 package me.bananentoast.stickstaffs;
 
-import lombok.Getter;
 import me.bananentoast.stickstaffs.command.StaffCommand;
 import me.bananentoast.stickstaffs.helpers.Metrics;
 import me.bananentoast.stickstaffs.listener.InteractListener;
 import me.bananentoast.stickstaffs.manager.StaffManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-@Getter
 public final class StickStaffs extends JavaPlugin {
 
-    @Getter
     private static StickStaffs instance;
 
     private StaffCommand staffCommand;
@@ -33,4 +30,11 @@ public final class StickStaffs extends JavaPlugin {
     public void onDisable() {
     }
 
+    public static StickStaffs getInstance() {
+        return instance;
+    }
+
+    public StaffManager getStaffManager() {
+        return staffManager;
+    }
 }
