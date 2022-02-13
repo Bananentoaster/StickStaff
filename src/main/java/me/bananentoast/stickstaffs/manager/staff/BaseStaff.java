@@ -1,7 +1,6 @@
 package me.bananentoast.stickstaffs.manager.staff;
 
 import me.bananentoast.stickstaffs.StickStaffs;
-import me.bananentoast.stickstaffs.manager.StaffManager;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.entity.Player;
@@ -70,28 +69,28 @@ public abstract class BaseStaff {
     }
 
     public Recipe getRecipe() {
-        NamespacedKey key = new NamespacedKey(StaffManager.getInstance(), "staff_" + this.getName());
+        NamespacedKey key = new NamespacedKey(StickStaffs.getInstance(), "staff_" + this.getName());
         ShapedRecipe recipeInstance = new ShapedRecipe(key, this.getItem());
         Map<Material, Character> m = new HashMap<>();
         int current = 0;
         String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-        if(recipeMaterial != null) {
+        if (recipeMaterial != null) {
             recipeInstance.shape("AAM", "ASA", "SAA");
             recipeInstance.setIngredient('M', recipeMaterial);
             recipeInstance.setIngredient('S', Material.STICK);
-        } else if(recipe != null) {
+        } else if (recipe != null) {
             List<String> shapes = new ArrayList<>();
             for (int i = 0; i < 3; i++) {
                 String shape = "";
-                if(recipe.get(i) != null) {
+                if (recipe.get(i) != null) {
                     for (int j = 0; j < 3; j++) {
-                        if(recipe.get(i).get(j) != null && recipe.get(i).get(j) != Material.AIR) {
+                        if (recipe.get(i).get(j) != null && recipe.get(i).get(j) != Material.AIR) {
                             Character symbol;
 
-                            if(m.containsKey(recipe.get(i).get(j))) {
+                            if (m.containsKey(recipe.get(i).get(j))) {
                                 symbol = m.get(recipe.get(i).get(j));
-                            }else{
+                            } else {
                                 symbol = chars.charAt(current);
                                 current++;
 
@@ -99,11 +98,11 @@ public abstract class BaseStaff {
                             }
 
                             shape += symbol;
-                        }else {
+                        } else {
                             shape += " ";
                         }
                     }
-                }else{
+                } else {
                     shape = "   ";
                 }
 
@@ -112,7 +111,7 @@ public abstract class BaseStaff {
 
             recipeInstance.shape(shapes.get(0) != null ? shapes.get(0) : "   ", shapes.get(1) != null ? shapes.get(1) : "   ", shapes.get(2) != null ? shapes.get(2) : "   ");
 
-            for (Material mat:
+            for (Material mat :
                     m.keySet()) {
                 recipeInstance.setIngredient(m.get(mat), mat);
             }

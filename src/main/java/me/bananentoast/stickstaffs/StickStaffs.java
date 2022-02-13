@@ -8,12 +8,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class StickStaffs extends JavaPlugin {
 
+    private static StickStaffs instance;
+
     private StaffCommand staffCommand;
     private InteractListener interactListener;
     private StaffManager staffManager;
 
     @Override
     public void onEnable() {
+        instance = this;
+
         staffCommand = new StaffCommand(this);
         interactListener = new InteractListener(this);
         staffManager = new StaffManager(this);
@@ -28,5 +32,9 @@ public final class StickStaffs extends JavaPlugin {
 
     public StaffManager getStaffManager() {
         return staffManager;
+    }
+
+    public static StickStaffs getInstance() {
+        return instance;
     }
 }

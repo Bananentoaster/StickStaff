@@ -2,12 +2,6 @@ package me.bananentoast.stickstaffs.manager;
 
 import me.bananentoast.stickstaffs.StickStaffs;
 import me.bananentoast.stickstaffs.manager.staff.*;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.NamespacedKey;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.ShapedRecipe;
-import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -15,7 +9,7 @@ import java.util.List;
 
 public class StaffManager {
 
-    public static StickStaffs instance;
+    public StickStaffs instance;
 
     private final List<String> staffCasedNames = new ArrayList<>();
 
@@ -74,7 +68,4 @@ public class StaffManager {
         return staffCasedNames;
     }
 
-    public static StickStaffs getInstance() {
-        return instance;
-    }
 }
