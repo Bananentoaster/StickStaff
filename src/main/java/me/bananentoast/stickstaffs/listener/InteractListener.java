@@ -10,10 +10,10 @@ import org.bukkit.inventory.ItemStack;
 
 public class InteractListener implements Listener {
 
-    private StickStaffs instance;
+    private final StickStaffs instance;
 
-    public InteractListener(StickStaffs instance) {
-        this.instance = instance;
+    public InteractListener() {
+        instance = StickStaffs.getInstance();
         instance.getServer().getPluginManager().registerEvents(this, instance);
     }
 

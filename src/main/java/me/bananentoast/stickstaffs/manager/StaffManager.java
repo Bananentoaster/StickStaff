@@ -16,8 +16,8 @@ public class StaffManager {
     private final HashMap<String, BaseStaff> staffNames = new HashMap<>();
     private final HashMap<String, BaseStaff> staffItemNames = new HashMap<>();
 
-    public StaffManager(StickStaffs instance) {
-        this.instance = instance;
+    public StaffManager() {
+        instance = StickStaffs.getInstance();
     }
 
     public void loadStaffs() {

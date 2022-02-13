@@ -2,7 +2,10 @@ package me.bananentoast.stickstaffs.command;
 
 import me.bananentoast.stickstaffs.StickStaffs;
 import me.bananentoast.stickstaffs.util.ListUtil;
-import org.bukkit.command.*;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -10,10 +13,10 @@ import java.util.List;
 
 public class StaffCommand implements CommandExecutor, TabCompleter {
 
-    private StickStaffs instance;
+    private final StickStaffs instance;
 
-    public StaffCommand(StickStaffs instance) {
-        this.instance = instance;
+    public StaffCommand() {
+        instance = StickStaffs.getInstance();
         instance.getCommand("staff").setExecutor(this);
         instance.getCommand("staff").setTabCompleter(this);
     }
