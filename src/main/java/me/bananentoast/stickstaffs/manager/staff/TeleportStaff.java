@@ -12,7 +12,7 @@ import java.util.HashSet;
 public class TeleportStaff extends BaseStaff {
 
     public TeleportStaff() {
-        super("teleport", "§3§lTeleport Staff", Material.ENDER_PEARL);
+        super("teleport", "§3§lTeleport Staff", Material.ENDER_PEARL, "§7Teleport...");
     }
 
     @Override

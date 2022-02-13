@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 public class ChickenStaff extends BaseStaff {
 
     public ChickenStaff() {
-        super("chicken", "§e§lChicken Staff", Material.EGG);
+        super("chicken", "§e§lChicken Staff", Material.EGG, "§7Throws your eggs for you");
     }
 
     @Override

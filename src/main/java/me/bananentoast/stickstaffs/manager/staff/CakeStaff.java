@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 public class CakeStaff extends BaseStaff {
 
     public CakeStaff() {
-        super("cake", "§d§lCake Staff", Material.CAKE);
+        super("cake", "§d§lCake Staff", Material.CAKE, "§7Throw your own cake");
     }
 
     @Override

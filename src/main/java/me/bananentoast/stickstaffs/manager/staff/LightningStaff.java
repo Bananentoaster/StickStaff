@@ -10,7 +10,7 @@ import java.util.HashSet;
 public class LightningStaff extends BaseStaff {
 
     public LightningStaff() {
-        super("lightning", "§e§lLightning Staff", Material.FIRE_CHARGE);
+        super("lightning", "§e§lLightning Staff", Material.FIRE_CHARGE, "§7Summon a lightning bolt");
     }
 
     @Override

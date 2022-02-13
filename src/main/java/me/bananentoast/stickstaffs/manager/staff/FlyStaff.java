@@ -1,13 +1,11 @@
 package me.bananentoast.stickstaffs.manager.staff;
 
-import org.bukkit.Material;
-import org.bukkit.entity.FallingBlock;
 import org.bukkit.entity.Player;
 
 public class FlyStaff extends BaseStaff {
 
     public FlyStaff() {
-        super("fly", "§f§lFly Staff");
+        super("fly", "§f§lFly Staff", "§7Too lazy to double jump?");
     }
 
     @Override

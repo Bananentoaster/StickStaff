@@ -23,11 +23,10 @@ public class StaffCommand implements CommandExecutor, TabCompleter {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
-        if (!(sender instanceof Player)) {
+        if (!(sender instanceof Player player)) {
             sender.sendMessage("§cThis command is player-only!");
             return true;
         }
-        Player player = (Player) sender;
         if (!player.isOp()) {
             return true;
         }

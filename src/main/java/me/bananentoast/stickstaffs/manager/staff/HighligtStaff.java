@@ -17,7 +17,8 @@ public class HighligtStaff extends BaseStaff {
                         Arrays.asList(Material.GLOW_BERRIES, Material.AIR, Material.AIR),
                         Arrays.asList(Material.AIR, Material.STICK, Material.AIR),
                         Arrays.asList(Material.AIR, Material.AIR, Material.STICK)
-                )
+                ),
+                "§7Highlights the clicked block for all players"
         );
     }
 

@@ -10,39 +10,40 @@ import org.bukkit.inventory.Recipe;
 import org.bukkit.inventory.ShapedRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public abstract class BaseStaff {
 
     private final String name;
     private final String itemName;
+    private final String description;
 
     private final boolean hasRecipe;
     private final Material recipeMaterial;
     private final List<List<Material>> recipe;
 
-    public BaseStaff(String name, String itemName) {
+    public BaseStaff(String name, String itemName, String description) {
         this.name = name;
         this.itemName = itemName;
+        this.description = description;
         this.hasRecipe = false;
         this.recipeMaterial = null;
         this.recipe = null;
     }
 
-    public BaseStaff(String name, String itemName, Material recipeMaterial) {
+    public BaseStaff(String name, String itemName, Material recipeMaterial, String description) {
         this.name = name;
         this.itemName = itemName;
+        this.description = description;
         this.hasRecipe = true;
         this.recipeMaterial = recipeMaterial;
         this.recipe = null;
     }
 
-    public BaseStaff(String name, String itemName, List<List<Material>> recipe) {
+    public BaseStaff(String name, String itemName, List<List<Material>> recipe, String description) {
         this.name = name;
         this.itemName = itemName;
+        this.description = description;
         this.hasRecipe = true;
         this.recipe = recipe;
         this.recipeMaterial = null;
@@ -55,6 +56,7 @@ public abstract class BaseStaff {
         itemStack.setAmount(1);
         ItemMeta itemMeta = itemStack.getItemMeta();
         itemMeta.setDisplayName(this.getItemName());
+        itemMeta.setLore(List.of(description));
         itemStack.setItemMeta(itemMeta);
 
         return itemStack;
