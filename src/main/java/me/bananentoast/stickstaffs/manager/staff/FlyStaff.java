@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 public class FlyStaff extends BaseStaff {
 
     public FlyStaff() {
-        super("fly", "§f§lFly Staff", "§7Too lazy to double jump?");
+        super("fly", "§f§lFly Staff", "§7Change your fly speed");
     }
 
     @Override
@@ -13,6 +13,11 @@ public class FlyStaff extends BaseStaff {
 
         if (!player.isFlying()) {
             player.setFlying(true);
+        }
+
+        if (player.getAllowFlight()) {
+            player.sendMessage("§cYou can't fly");
+            return;
         }
 
         float speed = player.getFlySpeed();
