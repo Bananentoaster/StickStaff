@@ -66,7 +66,7 @@ public final class OutlineUtil {
                         if(x == 0) {
                             for (int i = 0; i < step; i++) {
                                 block.getWorld().spawnParticle(particle,
-                                        block.getBoundingBox().getMinX() + ((block.getBoundingBox().getMaxX() - block.getBoundingBox().getMinX() ) * ((double)i / (double)step)),
+                                        block.getBoundingBox().getMinX() + ((block.getBoundingBox().getMaxX() - block.getBoundingBox().getMinX() ) * ((double)i / (double)(step - 1))),
                                         y == 0 ? block.getBoundingBox().getMinY() - offset : block.getBoundingBox().getMaxY() + offset,
                                         z == 0 ? block.getBoundingBox().getMinZ() - offset : block.getBoundingBox().getMaxZ() + offset,
                                         0, 0, 0, 0);
@@ -89,7 +89,7 @@ public final class OutlineUtil {
                             for (int i = 0; i < step; i++) {
                                 block.getWorld().spawnParticle(particle,
                                         x == 0 ? block.getBoundingBox().getMinX() - offset : block.getBoundingBox().getMaxX() + offset,
-                                        block.getBoundingBox().getMinY() + ((block.getBoundingBox().getMaxY() - block.getBoundingBox().getMinY() ) * ((double)i / (double)step)),
+                                        block.getBoundingBox().getMinY() + ((block.getBoundingBox().getMaxY() - block.getBoundingBox().getMinY() ) * ((double)i / (double)(step - 1))),
                                         z == 0 ? block.getBoundingBox().getMinZ() - offset : block.getBoundingBox().getMaxZ() + offset,
                                         0, 0, 0, 0);
                             }
@@ -112,7 +112,7 @@ public final class OutlineUtil {
                                 block.getWorld().spawnParticle(particle,
                                         x == 0 ? block.getBoundingBox().getMinX() - offset : block.getBoundingBox().getMaxX() + offset,
                                         y == 0 ? block.getBoundingBox().getMinY() - offset : block.getBoundingBox().getMaxY() + offset,
-                                        block.getBoundingBox().getMinZ() + ((block.getBoundingBox().getMaxZ() - block.getBoundingBox().getMinZ() ) * ((double)i / (double)step)),
+                                        block.getBoundingBox().getMinZ() + ((block.getBoundingBox().getMaxZ() - block.getBoundingBox().getMinZ() ) * ((double)i / (double)(step - 1))),
                                         0, 0, 0, 0);
                             }
                         }
@@ -128,17 +128,17 @@ public final class OutlineUtil {
                 for (int z = 0; z < 2; z++) {
                     if(x == 0) {
                         for (int i = 0; i < step; i++) {
-                            block.getWorld().spawnParticle(particle, block.getBoundingBox().getMinX() + ((block.getBoundingBox().getMaxX() - block.getBoundingBox().getMinX() ) * ((double)i / (double)step)), y == 0 ? block.getBoundingBox().getMinY() - offset : block.getBoundingBox().getMaxY() + offset, z == 0 ? block.getBoundingBox().getMinZ() - offset : block.getBoundingBox().getMaxZ() + offset, 0, 0, 0, 0);
+                            block.getWorld().spawnParticle(particle, block.getBoundingBox().getMinX() + ((block.getBoundingBox().getMaxX() - block.getBoundingBox().getMinX() ) * ((double)i / (double)(step - 1))), y == 0 ? block.getBoundingBox().getMinY() - offset : block.getBoundingBox().getMaxY() + offset, z == 0 ? block.getBoundingBox().getMinZ() - offset : block.getBoundingBox().getMaxZ() + offset, 0, 0, 0, 0);
                         }
                     }
                     if(y == 0) {
                         for (int i = 0; i < step; i++) {
-                            block.getWorld().spawnParticle(particle, x == 0 ? block.getBoundingBox().getMinX() - offset : block.getBoundingBox().getMaxX() + offset, block.getBoundingBox().getMinY() + ((block.getBoundingBox().getMaxY() - block.getBoundingBox().getMinY() ) * ((double)i / (double)step)), z == 0 ? block.getBoundingBox().getMinZ() - offset : block.getBoundingBox().getMaxZ() + offset, 0, 0, 0, 0);
+                            block.getWorld().spawnParticle(particle, x == 0 ? block.getBoundingBox().getMinX() - offset : block.getBoundingBox().getMaxX() + offset, block.getBoundingBox().getMinY() + ((block.getBoundingBox().getMaxY() - block.getBoundingBox().getMinY() ) * ((double)i / (double)(step - 1))), z == 0 ? block.getBoundingBox().getMinZ() - offset : block.getBoundingBox().getMaxZ() + offset, 0, 0, 0, 0);
                         }
                     }
                     if(z == 0) {
                         for (int i = 0; i < step; i++) {
-                            block.getWorld().spawnParticle(particle, x == 0 ? block.getBoundingBox().getMinX() - offset : block.getBoundingBox().getMaxX() + offset, y == 0 ? block.getBoundingBox().getMinY() - offset : block.getBoundingBox().getMaxY() + offset, block.getBoundingBox().getMinZ() + ((block.getBoundingBox().getMaxZ() - block.getBoundingBox().getMinZ() ) * ((double)i / (double)step)), 0, 0, 0, 0);
+                            block.getWorld().spawnParticle(particle, x == 0 ? block.getBoundingBox().getMinX() - offset : block.getBoundingBox().getMaxX() + offset, y == 0 ? block.getBoundingBox().getMinY() - offset : block.getBoundingBox().getMaxY() + offset, block.getBoundingBox().getMinZ() + ((block.getBoundingBox().getMaxZ() - block.getBoundingBox().getMinZ() ) * ((double)i / (double)(step - 1))), 0, 0, 0, 0);
                         }
                     }
                 }

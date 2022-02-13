@@ -37,7 +37,7 @@ public class StaffCommand implements CommandExecutor, TabCompleter {
             player.sendMessage("§cInvalid Staff Name! Please use /staff <staff name>!");
             return true;
         }
-        player.getInventory().addItem(instance.getStaffManager().getStaffItem(instance.getStaffManager().getStaff(staffName)));
+        player.getInventory().addItem(instance.getStaffManager().getStaff(staffName).getItem());
         player.sendMessage("§aYou received the " + staffName + " staff");
         return true;
     }

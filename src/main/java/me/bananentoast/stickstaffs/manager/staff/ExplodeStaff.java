@@ -10,7 +10,7 @@ import org.bukkit.inventory.ItemStack;
 public class ExplodeStaff extends BaseStaff {
 
     public ExplodeStaff() {
-        super("explode", "§4§lExplode §f§lStaff", Material.TNT);
+        super("explode", "§4§lExplode Staff", Material.TNT);
     }
 
     @Override
