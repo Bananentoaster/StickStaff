@@ -8,7 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class StickStaffs extends JavaPlugin {
 
-    private static StickStaffs instance;
+    public static StickStaffs instance;
 
     private StaffCommand staffCommand;
     private InteractListener interactListener;
