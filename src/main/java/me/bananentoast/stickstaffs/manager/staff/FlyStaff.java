@@ -11,13 +11,13 @@ public class FlyStaff extends BaseStaff {
     @Override
     public void onClick(Player player) {
 
-        if (!player.isFlying()) {
-            player.setFlying(true);
-        }
-
-        if (player.getAllowFlight()) {
+        if (!player.getAllowFlight()) {
             player.sendMessage("§cYou can't fly");
             return;
+        }
+
+        if (!player.isFlying()) {
+            player.setFlying(true);
         }
 
         float speed = player.getFlySpeed();
