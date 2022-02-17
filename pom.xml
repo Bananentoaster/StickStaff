@@ -39,7 +39,6 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
-                            <outputFile>C:\Users\StayWithMeSenpai\Desktop\servers\paper\1.18-5\plugins\StickStaff.jar</outputFile>
                         </configuration>
                     </execution>
                 </executions>
