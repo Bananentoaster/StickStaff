@@ -1,5 +1,7 @@
 package me.bananentoast.stickstaffs.manager.staff;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -19,7 +21,7 @@ public class TeleportStaff extends BaseStaff {
     public void onClick(Player player) {
 
         if (!consume(player, Material.ENDER_PEARL, 4, false)) {
-            player.sendMessage("§4Give me pearls!");
+            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("§cGive me pearls!"));
             return;
         }
 

@@ -1,5 +1,7 @@
 package me.bananentoast.stickstaffs.manager.staff;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Material;
 import org.bukkit.entity.FallingBlock;
 import org.bukkit.entity.Player;
@@ -14,7 +16,7 @@ public class CakeStaff extends BaseStaff {
     public void onClick(Player player) {
 
         if (!consume(player, Material.CAKE, 1, false)) {
-            player.sendMessage("§4Give me cake!");
+            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("§cGive me cake!"));
             return;
         }
 

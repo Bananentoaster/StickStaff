@@ -71,7 +71,7 @@ public abstract class BaseStaff {
         return itemName;
     }
 
-    public Recipe getRecipe() {
+    public ShapedRecipe getRecipe() {
         NamespacedKey key = new NamespacedKey(StickStaffs.getInstance(), "staff_" + this.getName());
         ShapedRecipe recipeInstance = new ShapedRecipe(key, this.getItem());
         Map<Material, Character> m = new HashMap<>();
@@ -79,9 +79,14 @@ public abstract class BaseStaff {
         String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
         if (recipeMaterial != null) {
-            recipeInstance.shape("AAM", "ASA", "SAA");
+            recipeInstance.shape(
+                    "AAM",
+                    "ASA",
+                    "SAA"
+            );
             recipeInstance.setIngredient('M', recipeMaterial);
             recipeInstance.setIngredient('S', Material.STICK);
+            recipeInstance.setIngredient('A', Material.AIR);
         } else if (recipe != null) {
             List<String> shapes = new ArrayList<>();
             for (int i = 0; i < 3; i++) {

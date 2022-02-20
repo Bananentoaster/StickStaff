@@ -10,7 +10,7 @@ public class HealStaff extends BaseStaff {
     private static final double healBonus = 3;
 
     public HealStaff() {
-        super("heal", "§d§lHeal Staff", Material.TOTEM_OF_UNDYING, "Heals you by 1.5 heats");
+        super("heal", "§d§lHeal Staff", Material.TOTEM_OF_UNDYING, "§7Heals you by 1.5 heats");
     }
 
     @Override

@@ -3,6 +3,7 @@ package me.bananentoast.stickstaffs;
 import me.bananentoast.stickstaffs.command.StaffCommand;
 import me.bananentoast.stickstaffs.helpers.Metrics;
 import me.bananentoast.stickstaffs.listener.InteractListener;
+import me.bananentoast.stickstaffs.listener.InventoryListener;
 import me.bananentoast.stickstaffs.manager.StaffManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -12,6 +13,7 @@ public final class StickStaffs extends JavaPlugin {
 
     private StaffCommand staffCommand;
     private InteractListener interactListener;
+    private InventoryListener inventoryListener;
     private StaffManager staffManager;
 
     @Override
@@ -20,6 +22,7 @@ public final class StickStaffs extends JavaPlugin {
 
         staffCommand = new StaffCommand();
         interactListener = new InteractListener();
+        inventoryListener = new InventoryListener();
         staffManager = new StaffManager();
         staffManager.loadStaffs();
 

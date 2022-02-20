@@ -1,5 +1,7 @@
 package me.bananentoast.stickstaffs.manager.staff;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
 
 public class FlyStaff extends BaseStaff {
@@ -12,7 +14,7 @@ public class FlyStaff extends BaseStaff {
     public void onClick(Player player) {
 
         if (!player.getAllowFlight()) {
-            player.sendMessage("§cYou can't fly");
+            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("§cYou can't fly!"));
             return;
         }
 
@@ -36,7 +38,7 @@ public class FlyStaff extends BaseStaff {
 
         player.setFlySpeed(speed);
 
-        player.sendMessage("§a§lFly-Speed: x" + speed * 10);
+        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("§a§lFly-Speed: x" + speed * 10));
 
     }
 

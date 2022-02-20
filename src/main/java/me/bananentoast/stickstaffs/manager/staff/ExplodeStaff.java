@@ -1,5 +1,7 @@
 package me.bananentoast.stickstaffs.manager.staff;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.EntityType;
@@ -17,7 +19,7 @@ public class ExplodeStaff extends BaseStaff {
     public void onClick(Player player) {
 
         if (!consume(player, Material.TNT, 16, false)) {
-            player.sendMessage("§4Give me TNT!");
+            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("§cGive me TNT!"));
             return;
         }
 

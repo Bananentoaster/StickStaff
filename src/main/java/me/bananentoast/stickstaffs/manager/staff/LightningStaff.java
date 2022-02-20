@@ -1,5 +1,7 @@
 package me.bananentoast.stickstaffs.manager.staff;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -17,7 +19,7 @@ public class LightningStaff extends BaseStaff {
     public void onClick(Player player) {
 
         if (!consume(player, Material.FIRE_CHARGE, 16, false)) {
-            player.sendMessage("§4Give me charges!");
+            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("§cOut of charges!"));
             return;
         }
 
