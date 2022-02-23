@@ -12,10 +12,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.ShapedRecipe;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class StaffCommand implements CommandExecutor, TabCompleter {
@@ -29,11 +28,12 @@ public class StaffCommand implements CommandExecutor, TabCompleter {
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String s, String[] args) {
         if (!(sender instanceof Player player)) {
             sender.sendMessage("§cThis command is player-only!");
             return true;
         }
+
         if (args.length == 0) {
             player.sendMessage("§cPlease use /staff <give|recipe>!");
             return true;
@@ -83,7 +83,7 @@ public class StaffCommand implements CommandExecutor, TabCompleter {
     }
 
     @Override
-    public List<String> onTabComplete(CommandSender sender, Command command, String name, String[] args) {
+    public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String name, String[] args) {
         List<String> list = new ArrayList<>();
 
         if (args.length < 2) {

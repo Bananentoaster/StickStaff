@@ -28,7 +28,7 @@ public class StaffManager {
         addStaff(new CakeStaff());
         addStaff(new ChickenStaff());
         addStaff(new FlyStaff());
-        addStaff(new HighligtStaff());
+        addStaff(new HighlightStaff());
     }
 
     private void addStaff(BaseStaff newStaff) {

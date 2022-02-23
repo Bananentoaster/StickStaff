@@ -5,7 +5,6 @@ import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Material;
 import org.bukkit.entity.Chicken;
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.FallingBlock;
 import org.bukkit.entity.Player;
 
 public class ChickenStaff extends BaseStaff {

@@ -10,11 +10,12 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 
 import java.util.Arrays;
+import java.util.List;
 
-public class HighligtStaff extends BaseStaff {
+public class HighlightStaff extends BaseStaff {
 
-    public HighligtStaff() {
-        super("highlight", "§c§lHighligt Staff",
+    public HighlightStaff() {
+        super("highlight", "§c§lHighlight Staff",
                 Arrays.asList(
                         Arrays.asList(Material.GLOW_BERRIES, Material.AIR, Material.AIR),
                         Arrays.asList(Material.AIR, Material.STICK, Material.AIR),
@@ -28,7 +29,7 @@ public class HighligtStaff extends BaseStaff {
     public void onClick(Player player) {
         Block b = player.getTargetBlockExact(30);
         if(b != null) {
-            OutlineUtil.outlineBlocks(Arrays.asList(b), Particle.SCRAPE, 8);
+            OutlineUtil.outlineBlocks(List.of(b), Particle.SCRAPE, 8);
         } else {
             player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("§cWhere da block at?!"));
         }

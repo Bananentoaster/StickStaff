@@ -7,7 +7,6 @@ import org.bukkit.Sound;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.TNTPrimed;
-import org.bukkit.inventory.ItemStack;
 
 public class ExplodeStaff extends BaseStaff {
 

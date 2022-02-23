@@ -29,6 +29,8 @@ public class LightningStaff extends BaseStaff {
         Location location = block.getLocation();
         location.setY(location.getBlockY() + 1);
 
+        if (location.getWorld() == null) return;
+
         location.getWorld().strikeLightning(location);
     }
 

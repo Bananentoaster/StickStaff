@@ -11,22 +11,19 @@ public final class StickStaffs extends JavaPlugin {
 
     private static StickStaffs instance;
 
-    private StaffCommand staffCommand;
-    private InteractListener interactListener;
-    private InventoryListener inventoryListener;
     private StaffManager staffManager;
 
     @Override
     public void onEnable() {
         instance = this;
 
-        staffCommand = new StaffCommand();
-        interactListener = new InteractListener();
-        inventoryListener = new InventoryListener();
+        new StaffCommand();
+        new InteractListener();
+        new InventoryListener();
         staffManager = new StaffManager();
         staffManager.loadStaffs();
 
-        Metrics metrics = new Metrics(this, 14298);
+        new Metrics(this, 14298);
     }
 
     @Override
